@@ -1,8 +1,8 @@
-#N canvas 342 22 1676 976 10;
+#N canvas 342 0 1676 976 10;
 #X obj 125 503 dac~;
 #X obj 143 413 *~;
 #X obj 230 311 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 12700 1;
+-1 -1 7200 1;
 #X obj 230 447 / 127;
 #X obj 404 188 soundfiler;
 #X obj 483 188 table array1;
@@ -36,7 +36,7 @@
 #X obj 342 290 snapshot~;
 #X floatatom 340 324 5 0 0 0 - - -, f 5;
 #X obj 403 255 metro 10;
-#X obj 375 217 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 375 217 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 190 147 / 44;
 #X floatatom 434 374 5 0 0 0 - - -, f 5;
@@ -199,6 +199,7 @@ as a rhythm for the micro comp;
 -1 -1;
 #X obj 254 638 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
+#X obj 185 797 ethan;
 #X floatatom 135 683 5 0 0 0 - - -, f 5;
 #X msg 302 579 stop;
 #X obj 260 580 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -213,8 +214,8 @@ as a rhythm for the micro comp;
 #X obj 252 840 delay 5000;
 #X obj 261 882 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 167 821 ethan_tones;
 #X connect 1 0 0 0;
+#X connect 1 0 0 1;
 #X connect 2 0 3 0;
 #X connect 3 0 1 1;
 #X connect 4 0 6 1;
@@ -415,18 +416,18 @@ as a rhythm for the micro comp;
 #X connect 172 0 176 0;
 #X connect 173 0 172 0;
 #X connect 173 0 175 0;
-#X connect 176 0 185 0;
+#X connect 176 0 186 0;
 #X connect 177 0 172 1;
 #X connect 178 0 172 2;
-#X connect 180 0 184 0;
-#X connect 181 0 184 0;
-#X connect 183 0 4 0;
-#X connect 184 0 177 0;
-#X connect 185 0 188 0;
-#X connect 185 0 191 0;
-#X connect 186 0 185 1;
-#X connect 187 0 185 1;
-#X connect 188 0 189 0;
-#X connect 188 1 187 0;
-#X connect 189 0 186 0;
+#X connect 181 0 185 0;
+#X connect 182 0 185 0;
+#X connect 184 0 4 0;
+#X connect 185 0 177 0;
+#X connect 186 0 179 0;
+#X connect 186 0 189 0;
+#X connect 187 0 186 1;
+#X connect 188 0 186 1;
 #X connect 189 0 190 0;
+#X connect 189 1 188 0;
+#X connect 190 0 187 0;
+#X connect 190 0 191 0;
