@@ -1,8 +1,8 @@
-#N canvas 342 22 1676 976 10;
+#N canvas 143 23 1676 976 10;
 #X obj 125 503 dac~;
 #X obj 143 413 *~;
 #X obj 230 311 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 12700 1;
+-1 -1 9000 1;
 #X obj 230 447 / 127;
 #X obj 404 188 soundfiler;
 #X obj 483 188 table array1;
@@ -214,6 +214,7 @@ as a rhythm for the micro comp;
 #X obj 261 882 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 167 821 ethan_tones;
+#X msg 411 14 read -resize sounds/percussion/drums.wav array1;
 #X connect 1 0 0 0;
 #X connect 2 0 3 0;
 #X connect 3 0 1 1;
@@ -430,3 +431,4 @@ as a rhythm for the micro comp;
 #X connect 188 1 187 0;
 #X connect 189 0 186 0;
 #X connect 189 0 190 0;
+#X connect 192 0 4 0;
