@@ -28,7 +28,6 @@
 #X msg 248 315 symbol \$1\$2;
 #X obj 517 305 phasor~;
 #X obj 540 367 *~;
-#X obj 541 474 dac~;
 #X obj 109 311 send midinote2;
 #X obj 890 235 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -40,6 +39,7 @@
 #X obj 910 270 delay 5000;
 #X obj 774 517 vline~;
 #X obj 112 37 t b f;
+#X obj 541 474 outlet~;
 #X connect 0 0 27 0;
 #X connect 1 0 23 0;
 #X connect 2 0 8 0;
@@ -51,7 +51,7 @@
 #X connect 8 0 10 0;
 #X connect 8 1 21 0;
 #X connect 9 0 22 0;
-#X connect 9 0 30 0;
+#X connect 9 0 29 0;
 #X connect 10 0 26 0;
 #X connect 11 0 5 0;
 #X connect 11 1 16 0;
@@ -66,7 +66,7 @@
 #X connect 11 10 20 0;
 #X connect 11 11 4 0;
 #X connect 12 0 11 0;
-#X connect 12 0 36 0;
+#X connect 12 0 35 0;
 #X connect 13 0 10 0;
 #X connect 14 0 10 0;
 #X connect 15 0 2 0;
@@ -79,16 +79,16 @@
 #X connect 23 0 12 0;
 #X connect 23 1 15 0;
 #X connect 26 0 9 0;
-#X connect 27 0 32 0;
-#X connect 28 0 29 1;
-#X connect 31 0 33 0;
-#X connect 31 0 37 0;
-#X connect 32 0 28 0;
-#X connect 33 0 38 0;
+#X connect 27 0 31 0;
+#X connect 28 0 39 0;
+#X connect 30 0 32 0;
+#X connect 30 0 36 0;
+#X connect 31 0 28 0;
+#X connect 32 0 37 0;
+#X connect 33 0 37 0;
 #X connect 34 0 38 0;
-#X connect 35 0 39 0;
-#X connect 36 0 0 0;
-#X connect 37 0 34 0;
-#X connect 38 0 28 1;
-#X connect 39 0 31 0;
-#X connect 39 1 1 0;
+#X connect 35 0 0 0;
+#X connect 36 0 33 0;
+#X connect 37 0 28 1;
+#X connect 38 0 30 0;
+#X connect 38 1 1 0;
