@@ -1,120 +1,127 @@
-#N canvas 188 23 1216 852 10;
-#X obj 125 503 dac~;
-#X obj 143 413 *~;
-#X obj 61 216 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 12700 1;
-#X obj 61 352 / 127;
-#X obj 404 188 soundfiler;
-#X obj 483 188 table array1;
+#N canvas 151 24 1216 852 10;
+#X obj 74 646 dac~;
+#X obj 92 556 *~;
+#X obj 10 359 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 10 495 / 127;
+#X obj 408 370 soundfiler;
+#X obj 487 370 table array1;
 #X obj 144 93 f;
-#X obj 144 221 line~;
-#X obj 144 253 tabread4~ array1;
-#X msg 144 193 0 \, \$1 \$2;
-#X obj 144 168 pack f f;
+#X obj 134 239 line~;
+#X obj 134 271 tabread4~ array1;
+#X msg 134 211 0 \, \$1 \$2;
+#X obj 134 186 pack f f;
 #X obj 144 119 t f f;
 #X obj 234 49 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 386 561 osc~;
-#X obj 885 179 sigmund~ -npeak 10 peaks;
-#X obj 885 324 route 0 1 2 3 4 5 6 7 8 9;
-#X obj 391 475 unpack 0 0 0 0;
-#X obj 388 643 *~;
-#X obj 386 697 *~;
-#X obj 473 595 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+#X obj 390 743 osc~;
+#X obj 889 361 sigmund~ -npeak 10 peaks;
+#X obj 889 506 route 0 1 2 3 4 5 6 7 8 9;
+#X obj 395 657 unpack 0 0 0 0;
+#X obj 392 825 *~;
+#X obj 390 879 *~;
+#X obj 477 777 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X obj 473 731 / 127;
-#X obj 374 792 dac~;
+#X obj 477 913 / 127;
+#X obj 378 974 dac~;
 #X obj 1092 73 tap_tempo;
-#X obj 610 316 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 614 498 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 1065 131 metro;
 #X obj 1071 91 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 1067 165 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 343 254 env~;
-#X obj 342 290 snapshot~;
-#X floatatom 340 324 5 0 0 0 - - -, f 5;
-#X obj 403 255 metro 10;
-#X obj 375 217 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 347 436 env~;
+#X obj 346 472 snapshot~;
+#X floatatom 344 506 5 0 0 0 - - -, f 5;
+#X obj 407 437 metro 10;
+#X obj 379 399 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 190 147 / 44;
-#X floatatom 434 374 5 0 0 0 - - -, f 5;
-#X obj 485 373 sel 1;
-#X obj 829 286 spigot;
-#X obj 849 252 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X floatatom 438 556 5 0 0 0 - - -, f 5;
+#X obj 489 555 sel 1;
+#X obj 833 468 spigot;
+#X obj 853 434 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 436 533 cyclone/mean;
-#X floatatom 442 562 5 0 0 0 - - -, f 5;
-#X obj 838 220 loadbang;
-#X obj 386 537 line;
-#X obj 389 753 *~;
-#X obj 404 603 + 1;
-#X floatatom 715 320 5 0 0 0 - - -, f 5;
-#X msg 386 511 \$1 1;
-#X obj 202 534 ftom;
-#X text 117 554 shift to the nearest semitone here;
-#X obj 404 334 > 60;
-#X text 401 285 try to make adaptive threshold for transient detection
+#X obj 440 715 cyclone/mean;
+#X floatatom 446 744 5 0 0 0 - - -, f 5;
+#X obj 842 402 loadbang;
+#X obj 390 719 line;
+#X obj 393 935 *~;
+#X obj 408 785 + 1;
+#X floatatom 719 502 5 0 0 0 - - -, f 5;
+#X msg 390 693 \$1 1;
+#X obj 192 552 ftom;
+#X text 107 572 shift to the nearest semitone here;
+#X obj 408 516 > 60;
+#X text 405 467 try to make adaptive threshold for transient detection
 ;
-#X obj 633 243 bonk~;
-#X text 415 300 maybe bonk will work better;
-#X text 502 347 record rhythmic pattern over those 5 seconds \, loop
+#X obj 637 425 bonk~;
+#X text 419 482 maybe bonk will work better;
+#X text 506 529 record rhythmic pattern over those 5 seconds \, loop
 as a rhythm for the micro comp;
-#X obj 191 657 mode, f 7;
-#X obj 209 582 int;
-#X floatatom 144 616 5 0 0 0 - - -, f 5;
-#X floatatom 138 641 5 0 0 0 - - -, f 5;
-#X obj 195 752 unpack f f f;
-#X obj 215 625 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 181 675 mode, f 7;
+#X obj 199 600 int;
+#X floatatom 134 634 5 0 0 0 - - -, f 5;
+#X floatatom 128 659 5 0 0 0 - - -, f 5;
+#X obj 185 729 unpack f f f;
+#X obj 205 643 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 273 682 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 263 700 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X floatatom 135 683 5 0 0 0 - - -, f 5;
-#X text 350 626 anaylsis time length;
-#X obj 195 779 ethan_tones;
+#X floatatom 125 701 5 0 0 0 - - -, f 5;
+#X text 354 808 anaylsis time length;
+#X obj 185 756 ethan_tones;
 #X msg 411 14 read -resize sounds/percussion/drums.wav array1;
-#X msg 408 47 read -resize sounds/percussion/01_Drumming.wav array1
+#X msg 429 47 read -resize sounds/percussion/01_Drumming.wav array1
 ;
-#X msg 448 134 read -resize sounds/tonal/gabrieli.wav array1;
+#X msg 466 131 read -resize sounds/tonal/gabrieli.wav array1;
 #X msg 457 110 read -resize sounds/tonal/cello_suite.wav array1;
 #X msg 441 82 read -resize sounds/speaking/adult-class-room.wav array1
 ;
-#X obj 265 608 metro 5000;
+#X obj 255 626 metro 5000;
 #X msg 97 55 0;
-#X obj 300 653 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+#X obj 291 652 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X obj 300 789 / 127;
-#X obj 201 850 dac~;
-#X obj 216 811 *~;
-#X obj 313 418 line;
-#X msg 313 391 127 5000;
-#X msg 221 391 0 1000;
+#X obj 290 795 / 127;
+#X obj 205 818 dac~;
+#X obj 206 788 *~;
+#X obj 288 467 line;
+#X msg 288 440 127 5000;
+#X msg 211 409 0 1000;
 #X obj 294 46 delay 5000;
-#X obj 264 573 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 254 591 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X msg 267 537 0;
-#X msg 300 536 1;
+#X msg 226 523 0;
+#X msg 260 516 1;
 #X text 92 34 Stop;
 #X text 229 30 Start;
-#X text 205 684 clear mode;
+#X text 195 702 clear mode;
+#X msg 475 156 read -resize sounds/tonal/small.wav array1;
+#X obj 63 375 delwrite~ delay 5000;
+#X obj 116 461 delread~ delay 5000;
+#X msg 478 185 read -resize sounds/tonal/reich.wav array1;
+#X msg 478 210 read -resize sounds/atonal/tuning_orch2.wav array1;
+#X msg 476 233 read -resize sounds/tonal/aria.wav array1;
+#X msg 476 260 read -resize sounds/tonal/satie.wav array1;
 #X connect 1 0 0 0;
 #X connect 2 0 3 0;
 #X connect 3 0 1 1;
 #X connect 4 0 6 1;
 #X connect 6 0 11 0;
 #X connect 7 0 8 0;
-#X connect 8 0 1 0;
 #X connect 8 0 14 0;
 #X connect 8 0 27 0;
 #X connect 8 0 49 0;
+#X connect 8 0 84 0;
 #X connect 9 0 7 0;
 #X connect 10 0 9 0;
 #X connect 11 0 10 0;
 #X connect 11 1 32 0;
-#X connect 12 0 6 0;
 #X connect 12 0 76 0;
 #X connect 12 0 79 0;
+#X connect 12 0 6 0;
 #X connect 13 0 17 0;
 #X connect 14 0 35 0;
 #X connect 15 0 16 0;
@@ -176,3 +183,8 @@ as a rhythm for the micro comp;
 #X connect 77 0 67 0;
 #X connect 78 0 77 0;
 #X connect 79 0 77 0;
+#X connect 83 0 4 0;
+#X connect 85 0 1 0;
+#X connect 87 0 4 0;
+#X connect 88 0 4 0;
+#X connect 89 0 4 0;
