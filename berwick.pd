@@ -1,8 +1,8 @@
-#N canvas 151 24 1216 852 10;
+#N canvas 121 49 1216 852 10;
 #X obj 74 646 dac~;
 #X obj 92 556 *~;
 #X obj 10 359 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 12700 1;
 #X obj 10 495 / 127;
 #X obj 408 370 soundfiler;
 #X obj 487 370 table array1;
