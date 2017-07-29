@@ -4,7 +4,7 @@
 #X coords 0 1 2.57403e+006 -1 750 140 1 0 0;
 #X restore 34 32 graph;
 #X obj 37 177 hsl 750 15 0 2.57403e+006 0 0 pos pos empty -2 -8 0 10
--262130 -1 -1 156 1;
+-262130 -1 -1 420 1;
 #N canvas 491 183 483 446 load 0;
 #X obj 32 72 soundfiler;
 #X obj 32 96 print sample-ct;
@@ -226,9 +226,9 @@
 #X connect 30 0 0 0;
 #X restore 731 10 pd load;
 #X obj 37 194 hsl 750 15 0 2.57403e+006 0 0 empty endpos empty -2 -8
-0 10 -262144 -1 -1 220 1;
+0 10 -262144 -1 -1 484 1;
 #X obj 583 233 nbx 9 14 0 2.57403e+006 0 0 pos pos empty 0 -8 0 10
--262130 -1 -1 5360 256;
+-262130 -1 -1 14429 256;
 #X obj 88 235 bng 25 250 50 0 once empty empty 17 7 0 10 -204786 -1
 -1;
 #X obj 128 236 tgl 25 0 loop empty empty 17 7 0 10 -261234 -1 -1 1
@@ -889,19 +889,19 @@ param8 0.944882 \; param9 0.393701 \;;
 #X obj 1334 446 / 4410;
 #X obj 1258 593 line;
 #X obj 1253 418 metro 100;
-#X msg 1258 570 \$1 100;
 #X obj 1266 460 pack f f;
 #X obj 1124 460 t f f;
 #X msg 1266 485 0 \$1 \$2;
-#X text 1289 545 this is a sort of similar overall speed;
+#X text 1302 541 this is a sort of similar overall speed;
 #X text 1321 418 the speed of change I chose by ear;
 #X text 1384 445 this is the size of jump divisor - also chosen by
 ear;
 #X text 1305 571 the second term hear should be the same as the metro
 above;
-#X obj 1258 546 * 5;
 #X text 1274 380 toggles drunken walk on and off - toggle the other
 playback thing off first;
+#X msg 1258 570 \$1 100;
+#X obj 1258 542 * 5;
 #X connect 12 0 14 0;
 #X connect 12 0 109 0;
 #X connect 12 0 103 0;
@@ -963,7 +963,7 @@ playback thing off first;
 #X connect 78 0 79 0;
 #X connect 79 0 80 0;
 #X connect 80 0 46 0;
-#X connect 81 0 155 0;
+#X connect 81 0 154 0;
 #X connect 88 0 6 0;
 #X connect 92 0 93 0;
 #X connect 92 0 93 1;
@@ -1001,16 +1001,16 @@ playback thing off first;
 #X connect 141 0 122 1;
 #X connect 143 0 125 1;
 #X connect 143 0 127 0;
-#X connect 145 0 161 0;
+#X connect 145 0 162 0;
 #X connect 146 0 81 0;
 #X connect 148 0 152 0;
 #X connect 150 0 149 0;
-#X connect 150 0 154 1;
+#X connect 150 0 153 1;
 #X connect 151 0 147 0;
 #X connect 152 0 145 0;
-#X connect 153 0 151 0;
-#X connect 154 0 156 0;
-#X connect 155 0 154 0;
-#X connect 155 1 150 0;
-#X connect 156 0 145 0;
-#X connect 161 0 153 0;
+#X connect 153 0 155 0;
+#X connect 154 0 153 0;
+#X connect 154 1 150 0;
+#X connect 155 0 145 0;
+#X connect 161 0 151 0;
+#X connect 162 0 161 0;
