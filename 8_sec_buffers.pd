@@ -1,0 +1,55 @@
+#N canvas 245 498 1292 728 12;
+#N canvas 0 50 450 300 (subpatch) 0;
+#X array 8_sec_buffer_a 352800 float 2;
+#X coords 0 1 352800 -1 200 140 1 0 0;
+#X restore 65 385 graph;
+#X obj 121 160 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 147 161 write;
+#X obj 90 223 tabwrite~ 8_sec_buffer_a;
+#X msg 432 250 \; 8_sec_buffer_a normalize;
+#X obj 91 76 inlet~;
+#X obj 432 203 delay 8000;
+#X obj 371 324 s buffer_a_full;
+#X obj 432 25 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 836 154 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 862 155 write;
+#X obj 806 70 inlet~;
+#X obj 805 217 tabwrite~ 8_sec_buffer_b;
+#N canvas 0 50 450 300 (subpatch) 0;
+#X array 8_sec_buffer_b 352800 float 2;
+#X coords 0 1 352800 -1 200 140 1 0 0;
+#X restore 907 412 graph;
+#X obj 595 59 delay 8000;
+#X obj 432 60 metro 48000;
+#X obj 432 99 f;
+#X obj 472 99 + 1;
+#X obj 432 135 mod 2;
+#X obj 432 164 sel 0 1;
+#X obj 712 241 delay 8000;
+#X msg 712 288 \; 8_sec_buffer_b normalize;
+#X obj 651 362 s buffer_b_full;
+#X obj 432 -2 loadbang;
+#X text 588 -3 records for 8 seconds \, every 48 seconds \, to alternating
+buffers;
+#X connect 1 0 3 0;
+#X connect 5 0 3 0;
+#X connect 6 0 4 0;
+#X connect 6 0 7 0;
+#X connect 8 0 15 0;
+#X connect 9 0 12 0;
+#X connect 11 0 12 0;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
+#X connect 16 0 18 0;
+#X connect 17 0 16 1;
+#X connect 18 0 19 0;
+#X connect 19 0 1 0;
+#X connect 19 0 6 0;
+#X connect 19 1 9 0;
+#X connect 19 1 20 0;
+#X connect 20 0 21 0;
+#X connect 20 0 22 0;
+#X connect 23 0 8 0;
