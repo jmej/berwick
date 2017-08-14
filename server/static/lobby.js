@@ -11,9 +11,9 @@ function changeVol(zoneId) {
 		clearTimeout(timers[zoneId]);
 	}
 	timers[0] = setTimeout(function(){
-		console.log("sent " + value + " to vol" );
+		console.log("sending " + value + " to vol" );
 		$.ajax({
-			url: '/vol/',
+			url: '/vol',
 			method: 'POST',
 			dataType: 'text',
 			contentType: 'text/plain',
@@ -25,18 +25,24 @@ function changeVol(zoneId) {
 function mute(){
 	var button = $('#mute');
 	var state = button.text().trim() == 'muted';
+    if (state){
+        state = "1";
+    }else{
+        state = "0";
+    }
+    console.log("sending mutestate "+ state);
 	$.ajax({
-		url: '/mute/',
+		url: '/mute',
 		method: 'POST',
 		dataType: 'text',
 		contentType: 'text/plain',
-		data = state
-	}).done(fundtion(d){console.log("RESPONSE: " + d)});
+		data: state
+	}).done(function(d){console.log("RESPONSE: " + d)});
 }
 
 onload = function(){
 	$('#mute').click(function(){
-	    console.log($(this).text());
+	    mute();
 	    if($(this).text().trim() == 'audible (click to mute)' ){
 	        $(this).text('muted');
 	    }else{

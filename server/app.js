@@ -37,15 +37,24 @@ app.get('/', auth, function(req, res){
 	res.render('index', values);
 });
 
-app.post('/vol/:zone', auth, function(req, res){
-	console.log("Changing zone: " + req.params.zone + " to " + req.body);
-	client.send('/' + req.params.zone, parseInt(req.body), function(){
-		//nop
+app.post('/vol', auth, function(req, res){
+	console.log("Changing volume: to " + req.body);
+	client.send('/vol', parseInt(req.body), function(){
 	});
-	state[req.params.zone] = req.body;
+	state[req.params] = req.body;
 	saveState(state);
 	res.set('Conent-Type', 'text/plain');
 	res.send('ok');
+});
+
+app.post('/mute', auth, function(req, res){
+    console.log("Changing muting to " + req.body);
+    client.send('/mute', parseInt(req.body), function(){
+    });
+    state[req.params] = req.body;
+    saveState(state);
+    res.set('Conent-Type', 'text/plain');
+    res.send('ok');
 });
 
 app.listen(80);
