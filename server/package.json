@@ -1,0 +1,20 @@
+{
+  "name": "volume-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "basic-auth": "^1.0.3",
+    "body-parser": "^1.13.2",
+    "bootstrap": "^3.3.7",
+    "express": "^4.13.1",
+    "jade": "^1.11.0",
+    "lodash": "^3.10.0",
+    "node-osc": "^1.1.0"
+  }
+}

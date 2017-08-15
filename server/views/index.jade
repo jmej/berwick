@@ -1,0 +1,36 @@
+html
+    head
+        title|lobby volume control
+        script(src="/static/jquery.min.js")
+        link(rel="stylesheet", href="/css/bootstrap.min.css")
+        link(rel="stylesheet", href="/static/lobby.css")
+        script(src="/js/bootstrap.min.js")
+        script(src="/static/lobby.js")
+    body
+        container
+            h1
+                |BERWICK AUDIO SYSTEM
+           div.row
+                div.col-md-6
+                    h2
+                        |Volume
+                    div
+                        |Leave slider set at 'ideal' unless it needs to be altered
+                    hr       
+                    div(class='jlabel')
+                        |high
+                    input(id="volume" class="slider", type="range", min='0', max='100', onchange="changeVol('volume')", orient="vertical", oninput="changeVol('volume')", value=volume)
+                    div(id='volume')
+                    div(class='jlabel')
+                        |low
+
+                div.col-md-6
+                    h2
+                        |System Mute
+                    div
+                        |Buttons for fancy mute behavior below
+                    hr  
+                    button(id='mute', type="button", class='btn btn-danger', data-toggle='button', aria-pressed='false', autocomplete='off')
+                        |audible (click to mute)
+
+        
