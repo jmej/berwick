@@ -1,4 +1,4 @@
-#N canvas 259 137 1292 728 12;
+#N canvas 16 121 1292 728 12;
 #N canvas 0 50 450 300 (subpatch) 0;
 #X array buffer_a 352800 float 2;
 #X coords 0 1 352800 -1 200 140 1 0 0;
@@ -7,8 +7,7 @@
 -1;
 #X text 147 161 write;
 #X obj 91 76 inlet~;
-#X obj 432 203 delay 8000;
-#X obj 371 324 s buffer_a_full;
+#X obj 366 339 s buffer_a_full;
 #X obj 432 25 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 836 154 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
@@ -22,11 +21,10 @@
 #X obj 472 99 + 1;
 #X obj 432 135 mod 2;
 #X obj 432 164 sel 0 1;
-#X obj 712 241 delay 8000;
 #X obj 651 362 s buffer_b_full;
 #X obj 432 -2 loadbang;
 #X obj 90 223 tabwrite~ buffer_a;
-#X msg 432 250 \; buffer_a normalize;
+#X msg 432 281 \; buffer_a normalize;
 #X msg 712 288 \; buffer_b normalize;
 #X obj 804 218 tabwrite~ buffer_b;
 #X obj 266 128 dac~ 1;
@@ -37,25 +35,43 @@
 #X obj 433 60 metro 68000;
 #X text 588 -3 records for 8 seconds \, every 68 seconds \, to alternating
 buffers;
-#X connect 1 0 17 0;
-#X connect 3 0 17 0;
-#X connect 3 0 20 0;
-#X connect 4 0 18 0;
-#X connect 4 0 5 0;
-#X connect 6 0 26 0;
-#X connect 7 0 20 0;
-#X connect 10 0 11 0;
-#X connect 10 0 12 0;
-#X connect 11 0 10 1;
-#X connect 12 0 13 0;
-#X connect 13 0 1 0;
-#X connect 13 0 4 0;
-#X connect 13 1 7 0;
-#X connect 13 1 14 0;
-#X connect 14 0 19 0;
-#X connect 14 0 15 0;
-#X connect 16 0 6 0;
-#X connect 16 0 23 0;
-#X connect 23 0 22 0;
-#X connect 23 0 25 0;
-#X connect 26 0 10 0;
+#X obj 604 60 r buffers_restart;
+#X obj 605 88 t b b;
+#X msg 640 115 0;
+#X msg 602 116 1;
+#X obj 432 203 delay 8100;
+#X obj 713 241 delay 8100;
+#X obj 393 210 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 576 63 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 1 0 15 0;
+#X connect 3 0 15 0;
+#X connect 3 0 18 0;
+#X connect 5 0 24 0;
+#X connect 6 0 18 0;
+#X connect 9 0 10 0;
+#X connect 9 0 11 0;
+#X connect 10 0 9 1;
+#X connect 11 0 12 0;
+#X connect 12 0 1 0;
+#X connect 12 0 30 0;
+#X connect 12 0 32 0;
+#X connect 12 1 6 0;
+#X connect 12 1 31 0;
+#X connect 14 0 5 0;
+#X connect 14 0 21 0;
+#X connect 21 0 20 0;
+#X connect 21 0 23 0;
+#X connect 24 0 9 0;
+#X connect 26 0 27 0;
+#X connect 27 0 29 0;
+#X connect 27 1 28 0;
+#X connect 28 0 5 0;
+#X connect 28 0 9 1;
+#X connect 29 0 5 0;
+#X connect 30 0 16 0;
+#X connect 30 0 4 0;
+#X connect 31 0 17 0;
+#X connect 31 0 13 0;
+#X connect 33 0 27 0;

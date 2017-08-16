@@ -1,0 +1,33 @@
+#N canvas 24 711 759 331 10;
+#X msg 184 88 set \$1;
+#X obj 184 167 tabplay~;
+#X obj 307 109 array size;
+#X obj 339 219 delay;
+#X obj 307 134 t b f;
+#X obj 185 223 outlet~;
+#X obj 339 257 outlet;
+#X obj 284 -40 inlet;
+#X text 57 -76 plays back audio when given a table name \, bangs when
+done;
+#X obj 481 59 print;
+#X obj 284 14 t s b s;
+#X obj 284 -11 symbol;
+#X obj 206 132 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 406 171 print;
+#X obj 339 182 / 44.1;
+#X connect 0 0 1 0;
+#X connect 0 0 9 0;
+#X connect 1 0 5 0;
+#X connect 2 0 4 0;
+#X connect 3 0 6 0;
+#X connect 4 0 1 0;
+#X connect 4 1 13 0;
+#X connect 4 1 14 0;
+#X connect 7 0 11 0;
+#X connect 10 0 0 0;
+#X connect 10 1 2 0;
+#X connect 10 2 2 1;
+#X connect 11 0 10 0;
+#X connect 12 0 1 0;
+#X connect 14 0 3 0;
