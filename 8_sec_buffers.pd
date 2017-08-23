@@ -1,4 +1,4 @@
-#N canvas 16 121 1292 728 12;
+#N canvas 91 191 1292 728 12;
 #N canvas 0 50 450 300 (subpatch) 0;
 #X array buffer_a 352800 float 2;
 #X coords 0 1 352800 -1 200 140 1 0 0;
@@ -45,6 +45,8 @@ buffers;
 -1 -1;
 #X obj 576 63 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
+#X obj 576 38 delay 5000;
+#X text 670 39 not sure if this delay is needed;
 #X connect 1 0 15 0;
 #X connect 3 0 15 0;
 #X connect 3 0 18 0;
@@ -61,6 +63,7 @@ buffers;
 #X connect 12 1 31 0;
 #X connect 14 0 5 0;
 #X connect 14 0 21 0;
+#X connect 14 0 34 0;
 #X connect 21 0 20 0;
 #X connect 21 0 23 0;
 #X connect 24 0 9 0;
@@ -75,3 +78,4 @@ buffers;
 #X connect 31 0 17 0;
 #X connect 31 0 13 0;
 #X connect 33 0 27 0;
+#X connect 34 0 33 0;
