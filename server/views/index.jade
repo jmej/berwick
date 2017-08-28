@@ -1,0 +1,49 @@
+html
+    head
+        title|Variation Volume Control
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        script(src="/static/jquery.min.js")
+        link(rel="stylesheet", href="/css/bootstrap.min.css")
+        link(rel="stylesheet", href="/static/style.css")
+        link(rel="stylesheet", href="/static/slider/nouislider.css")
+        script(src="/js/bootstrap.min.js")
+        script(src="/static/slider/nouislider.js")
+        script(src="/static/berwick.js")
+    body
+        container
+            div
+                h1
+                    |Variation Volume Control
+                
+            hr
+            div.slider(id='slider')
+            br
+            br
+            div
+                |Ideal volume setting is 50
+            hr
+            h2
+                |System Mute
+            div
+                |Buttons for fancy mute behavior below
+            hr  
+            button(id='mute', type="button", class='btn btn-danger', data-toggle='button', aria-pressed='false', autocomplete='off')
+                |click to mute
+            div
+                br
+                h2
+                    |Mute Timer:
+                button(id='mute-1-hr', type="button", class='btn btn-danger', data-toggle='button', aria-pressed='false', autocomplete='off')
+                    |click to mute for 1 hour    
+                div
+                br
+                button(id='mute-4-hr', type="button", class='btn btn-danger', data-toggle='button', aria-pressed='false', autocomplete='off')
+                    |click to mute for 4 hours
+                div
+                br
+                button(id='mute-8-hr', type="button", class='btn btn-danger', data-toggle='button', aria-pressed='false', autocomplete='off')
+                    |click to mute for 8 hours
+
+
+
+
