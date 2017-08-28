@@ -12,13 +12,14 @@ if(!args[0]){
 }
 
 var muteState = {muted: 0, hours: 0, mins: 0, secs: 0}; //object to hold mutestate info from pd
+var currentlyPlaying = {liveInput: 0, file: ""};
 var hostport = args[0].split(/:/);
 console.log("Opening OSC client to " + hostport[0] + " on port " + hostport[1]);
 var client = new osc.Client(hostport[0], hostport[1]);
 var oscServer = new osc.Server(3333, 'localhost');
 oscServer.on("message", function (msg, rinfo) {
-      //console.log("Message from Pd:");
-      //console.log(msg);
+      console.log("Message from Pd:");
+      console.log(msg);
       if (msg[0] == '/muted'){
       	muteState.muted = msg[1];
       }
@@ -30,6 +31,12 @@ oscServer.on("message", function (msg, rinfo) {
       }
       if (msg[0] == '/mute-hours-left'){
       	muteState.hours = msg[1];
+      }
+      if (msg[0] == '/live'){
+      	currentlyPlaying.liveInput = msg[1];
+      }
+      if (msg[0] == '/file'){
+      	currentlyPlaying.file = msg[1];
       }
 });
 
@@ -59,6 +66,12 @@ app.get('/', auth, function(req, res){
 app.get('/mute-state', auth, function(req, res){
 	res.writeHead(200, {'content-type': 'text/json' });
     res.write( JSON.stringify(muteState) );
+    res.end('\n');
+});
+
+app.get('/currently_playing', auth, function(req, res){
+	res.writeHead(200, {'content-type': 'text/json' });
+    res.write( JSON.stringify(currentlyPlaying) );
     res.end('\n');
 });
 

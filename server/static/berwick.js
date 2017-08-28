@@ -1,6 +1,7 @@
 
 var timers = {};
 var muteState = {};
+var currentlyPlaying = {};
 
 function changeVol(value) {
     console.log("sending " + value + " to vol" );
@@ -16,7 +17,7 @@ function changeVol(value) {
 function mute(button){
 
     if ((button == "0") && (muteState.muted)){
-        mutingBehavior = "1";
+      mutingBehavior = "1";
     }else{
       mutingBehavior = button;
     }
@@ -92,6 +93,25 @@ onload = function(){
           //special case for infinite mute from pd
           if ((muteState.hours == '999')&&(muteState.mins == '999')&&(muteState.secs == '999')){
             $("#mute-timer").html("");
+          }
+        },
+
+         "error":function(error){
+         //handle error here
+        }
+      })
+
+            $.ajax({
+        type: 'GET',
+        dataType: 'json', 
+        url: '/currently_playing',
+        success: function(data){
+          //console.log(data);
+          currentlyPlaying = data;
+          if (currentlyPlaying.liveInput){
+            $('#currently_playing').text('live audio');
+          }else{
+            $('#currently_playing').text('Recording '+currentlyPlaying.file);
           }
         },
 
