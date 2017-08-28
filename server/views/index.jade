@@ -23,16 +23,15 @@ html
                 |Ideal volume setting is 50
             hr
             h2
-                |System Mute
-            div
-                |Buttons for fancy mute behavior below
-            hr  
+                |System Mute 
             button(id='mute', type="button", class='btn btn-danger', data-toggle='button', aria-pressed='false', autocomplete='off')
                 |click to mute
             div
                 br
                 h2
                     |Mute Timer:
+                    div(id='mute-state')
+                    div(id='mute-timer')
                 button(id='mute-1-hr', type="button", class='btn btn-danger', data-toggle='button', aria-pressed='false', autocomplete='off')
                     |click to mute for 1 hour    
                 div

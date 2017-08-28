@@ -10,9 +10,28 @@ var args = process.argv.slice(2);
 if(!args[0]){
 	return usage();
 }
+
+var muteState = {muted: 0, hours: 0, mins: 0, secs: 0}; //object to hold mutestate info from pd
 var hostport = args[0].split(/:/);
 console.log("Opening OSC client to " + hostport[0] + " on port " + hostport[1]);
 var client = new osc.Client(hostport[0], hostport[1]);
+var oscServer = new osc.Server(3333, 'localhost');
+oscServer.on("message", function (msg, rinfo) {
+      //console.log("Message from Pd:");
+      //console.log(msg);
+      if (msg[0] == '/muted'){
+      	muteState.muted = msg[1];
+      }
+      if (msg[0] == '/mute-seconds-left'){
+      	muteState.secs = msg[1];
+      }
+      if (msg[0] == '/mute-minutes-left'){
+      	muteState.mins = msg[1];
+      }
+      if (msg[0] == '/mute-hours-left'){
+      	muteState.hours = msg[1];
+      }
+});
 
 var state = loadPersistedValues();
 var creds = JSON.parse(fs.readFileSync(CREDS));
@@ -35,6 +54,12 @@ app.set('view engine', 'jade');
 app.get('/', auth, function(req, res){
 	var values = loadPersistedValues();
 	res.render('index', values);
+});
+
+app.get('/mute-state', auth, function(req, res){
+	res.writeHead(200, {'content-type': 'text/json' });
+    res.write( JSON.stringify(muteState) );
+    res.end('\n');
 });
 
 app.post('/vol', auth, function(req, res){
