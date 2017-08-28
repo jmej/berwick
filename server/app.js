@@ -95,8 +95,8 @@ app.post('/mute', auth, function(req, res){
     res.send('ok');
 });
 
-app.listen(80);
-console.log("Server listening on port 80");
+app.listen(8080);
+console.log("Server listening on port 8080");
 
 function loadPersistedValues(){
 	if(fs.existsSync(SAVESTATE)){

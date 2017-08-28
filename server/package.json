@@ -13,6 +13,7 @@
     "body-parser": "^1.13.2",
     "bootstrap": "^3.3.7",
     "express": "^4.13.1",
+    "forever-monitor": "^1.7.1",
     "jade": "^1.11.0",
     "lodash": "^3.10.0",
     "node-osc": "^1.1.0"
