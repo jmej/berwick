@@ -3,20 +3,23 @@
 # Jesse Mejia / parallel.studio 2017
 
 #put the following in /etc/rc.local
-#/home/parallel/berwick/start_pd.sh || exit 1 #added by parallel
-#exit 0
+#/home/parallel/berwick/start_pd.sh &
+#sudo chmod 755  /etc/rc.local
+
 
 echo starting node
 
 cd /home/parallel/berwick/server
-forever start app.js localhost:9009 &&
+forever start app.js localhost:9009 &
 
+sleep 10
 cd /home/parallel/berwick
-
-echo starting jack
+#killing pulseaudio fixes some jack errors
+killall pulseaudio &
+sleep 5
 qjackctl -s &
-
-ech starting pd
+sleep 10
+echo starting pd
 pd main.pd
 
 wait
