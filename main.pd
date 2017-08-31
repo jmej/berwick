@@ -1,4 +1,4 @@
-#N canvas 47 117 1671 904 10;
+#N canvas 45 119 1671 904 10;
 #X obj 88 235 bng 25 250 50 0 once empty empty 17 7 0 10 -204786 -1
 -1;
 #X obj 129 235 tgl 25 0 loop empty empty 17 7 0 10 -261234 -1 -1 1
@@ -266,7 +266,7 @@ presets - for example:;
 #X obj 183 246 sig~;
 #X floatatom 356 350 5 0 0 0 - - -, f 5;
 #X obj 352 143 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 4349 1;
+-1 -1 0 1;
 #X obj 274 215 loadbang;
 #X floatatom 353 311 5 0 0 0 - - -, f 5;
 #X text 375 218 lowpass filter;
@@ -361,7 +361,7 @@ presets - for example:;
 #X obj 183 246 sig~;
 #X floatatom 356 350 5 0 0 0 - - -, f 5;
 #X obj 352 143 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 9438 1;
 #X obj 274 215 loadbang;
 #X floatatom 353 311 5 0 0 0 - - -, f 5;
 #X text 375 218 lowpass filter;
@@ -452,7 +452,7 @@ presets - for example:;
 #X obj 183 246 sig~;
 #X floatatom 356 350 5 0 0 0 - - -, f 5;
 #X obj 352 143 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 1893 1;
 #X obj 274 215 loadbang;
 #X floatatom 353 311 5 0 0 0 - - -, f 5;
 #X text 375 218 lowpass filter;
@@ -582,7 +582,7 @@ presets - for example:;
 #X obj 183 246 sig~;
 #X floatatom 356 350 5 0 0 0 - - -, f 5;
 #X obj 352 143 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 11161 1;
+-1 -1 0 1;
 #X obj 274 215 loadbang;
 #X floatatom 353 311 5 0 0 0 - - -, f 5;
 #X text 375 218 lowpass filter;
@@ -692,7 +692,7 @@ presets - for example:;
 #X obj 183 246 sig~;
 #X floatatom 356 350 5 0 0 0 - - -, f 5;
 #X obj 352 143 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 4349 1;
+-1 -1 0 1;
 #X obj 274 215 loadbang;
 #X floatatom 353 311 5 0 0 0 - - -, f 5;
 #X text 375 218 lowpass filter;
@@ -793,7 +793,7 @@ presets - for example:;
 #X obj 183 246 sig~;
 #X floatatom 356 350 5 0 0 0 - - -, f 5;
 #X obj 352 143 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 9438 1;
 #X obj 274 215 loadbang;
 #X floatatom 353 311 5 0 0 0 - - -, f 5;
 #X text 375 218 lowpass filter;
@@ -884,7 +884,7 @@ presets - for example:;
 #X obj 183 246 sig~;
 #X floatatom 356 350 5 0 0 0 - - -, f 5;
 #X obj 352 143 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 1893 1;
 #X obj 274 215 loadbang;
 #X floatatom 353 311 5 0 0 0 - - -, f 5;
 #X text 375 218 lowpass filter;
@@ -992,7 +992,7 @@ presets - for example:;
 #X obj 183 246 sig~;
 #X floatatom 356 350 5 0 0 0 - - -, f 5;
 #X obj 352 143 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 11161 1;
+-1 -1 0 1;
 #X obj 274 215 loadbang;
 #X floatatom 353 311 5 0 0 0 - - -, f 5;
 #X text 375 218 lowpass filter;
@@ -1254,7 +1254,7 @@ transition;
 #X msg 115 2 listen 9009;
 #X obj 115 107 list trim;
 #X obj 21 182 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2100 1;
+-1 -1 4900 1;
 #X obj 115 132 route vol mute;
 #X obj 78 307 line;
 #X msg 78 276 \$1 1000;
@@ -1779,7 +1779,7 @@ are made;
 #X obj 1711 997 *~ 1;
 #X obj 1765 972 r web_mute;
 #X obj 636 -49 s log;
-#N canvas 1 108 925 503 logger 0;
+#N canvas 1 110 925 503 logger 1;
 #X obj 105 267 text set log;
 #X msg 132 240 1e+06;
 #X obj 132 217 loadbang;
@@ -1793,15 +1793,17 @@ are made;
 -1;
 #X obj 155 94 t b b b b;
 #X text 82 13 writes timestamps to a log when banged;
-#X msg 76 294 write log.txt;
+#X msg 80 299 write log.txt;
 #X obj 46 334 text define -k log;
 #A set 15 59 2017 8 30 \; 16 0 2017 8 30 \; 16 1 2017 8 30 \; 16 2
 2017 8 30 \; 16 13 2017 8 30 \; 16 14 2017 8 30 \; 16 36 2017 8 30
 \; 16 38 2017 8 30 \; 17 0 2017 8 30 \; 17 1 2017 8 30 \; 17 2 2017
 8 30 \; 17 29 2017 8 30 \; 17 46 2017 8 30 \; 17 50 2017 8 30 \; 17
-51 2017 8 30 \; 18 27 2017 8 30 \; 18 28 2017 8 30 \;;
-#X msg 315 200 read log.txt;
-#X obj 315 174 loadbang;
+51 2017 8 30 \; 18 27 2017 8 30 \; 18 28 2017 8 30 \; 19 12 2017 8
+30 \;;
+#X msg 345 200 read log.txt;
+#X obj 315 134 loadbang;
+#X obj 299 173 t b b, f 7;
 #X connect 1 0 0 1;
 #X connect 2 0 1 0;
 #X connect 3 0 6 2;
@@ -1819,7 +1821,9 @@ are made;
 #X connect 9 3 3 0;
 #X connect 11 0 12 0;
 #X connect 13 0 12 0;
-#X connect 14 0 13 0;
+#X connect 14 0 15 0;
+#X connect 15 0 11 0;
+#X connect 15 1 13 0;
 #X restore 839 119 pd logger;
 #X msg 885 782 -26;
 #X msg 1160 778 -23;
