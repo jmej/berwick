@@ -12,7 +12,7 @@ echo starting node
 cd /home/parallel/berwick/server
 forever start app.js localhost:9009 &
 
-sleep 10
+sleep 60
 cd /home/parallel/berwick
 #killing pulseaudio fixes some jack errors
 killall pulseaudio &

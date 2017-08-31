@@ -13,6 +13,7 @@ if(!args[0]){
 
 var muteState = {muted: 0, hours: 0, mins: 0, secs: 0}; //object to hold mutestate info from pd
 var currentlyPlaying = {liveInput: 0, file: ""};
+var vol = 50;
 var hostport = args[0].split(/:/);
 console.log("Opening OSC client to " + hostport[0] + " on port " + hostport[1]);
 var client = new osc.Client(hostport[0], hostport[1]);
@@ -37,6 +38,9 @@ oscServer.on("message", function (msg, rinfo) {
       }
       if (msg[0] == '/file'){
       	currentlyPlaying.file = msg[1];
+      }
+      if (msg[0] == '/vol'){
+      	vol = msg[1];
       }
 });
 
@@ -72,6 +76,12 @@ app.get('/mute-state', auth, function(req, res){
 app.get('/currently_playing', auth, function(req, res){
 	res.writeHead(200, {'content-type': 'text/json' });
     res.write( JSON.stringify(currentlyPlaying) );
+    res.end('\n');
+});
+
+app.get('/vol', auth, function(req, res){
+	res.writeHead(200, {'content-type': 'text/json' });
+    res.write( JSON.stringify(vol) );
     res.end('\n');
 });
 

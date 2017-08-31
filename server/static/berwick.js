@@ -50,6 +50,21 @@ onload = function(){
         }
     });
 
+    //initialize slider with value from last pd osc message recieved - just once to avoid weird feedback
+    $.ajax({
+        type: 'GET',
+        dataType: 'json', 
+        url: '/vol',
+        success: function(data){
+          //console.log(data);
+          slider.noUiSlider.set(data);
+        },
+
+         "error":function(error){
+         //handle error here
+        }
+      })
+
     slider.noUiSlider.on('slide', function(){
         var value = slider.noUiSlider.get();
         console.log("value is "+value);
@@ -61,7 +76,7 @@ onload = function(){
     });
 
     $('#mute-1-hr').click(function(){
-        mute("2");
+        mute("60");
     });
 
     $('#mute-4-hr').click(function(){
@@ -101,7 +116,7 @@ onload = function(){
         }
       })
 
-            $.ajax({
+      $.ajax({
         type: 'GET',
         dataType: 'json', 
         url: '/currently_playing',
