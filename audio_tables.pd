@@ -2,15 +2,8 @@
 #X obj 367 93 inlet;
 #X obj 371 166 outlet;
 #X obj 27 21 table a;
-#X msg 362 127 list a b c d e f g h i j;
 #X obj 26 42 table b;
 #X obj 26 65 table c;
-#X obj 27 82 table d;
-#X obj 26 102 table e;
-#X obj 26 122 table f;
-#X obj 27 143 table g;
-#X obj 26 162 table h;
-#X obj 26 182 table i;
-#X obj 26 202 table j;
-#X connect 0 0 3 0;
-#X connect 3 0 1 0;
+#X msg 362 127 list a b c;
+#X connect 0 0 5 0;
+#X connect 5 0 1 0;
