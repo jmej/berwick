@@ -12,6 +12,7 @@ if(!args[0]){
 }
 
 var muteState = {muted: 0, hours: 0, mins: 0, secs: 0}; //object to hold mutestate info from pd
+var override = 0;
 var currentlyPlaying = {liveInput: 0, file: ""};
 var vol = 50;
 var hostport = args[0].split(/:/);
@@ -41,6 +42,9 @@ oscServer.on("message", function (msg, rinfo) {
       }
       if (msg[0] == '/vol'){
       	vol = msg[1];
+      }
+      if (msg[0] == '/override'){
+      	override = msg[1];
       }
 });
 
@@ -82,6 +86,12 @@ app.get('/currently_playing', auth, function(req, res){
 app.get('/vol', auth, function(req, res){
 	res.writeHead(200, {'content-type': 'text/json' });
     res.write( JSON.stringify(vol) );
+    res.end('\n');
+});
+
+app.get('/override', auth, function(req, res){
+	res.writeHead(200, {'content-type': 'text/json' });
+    res.write( JSON.stringify(override) );
     res.end('\n');
 });
 

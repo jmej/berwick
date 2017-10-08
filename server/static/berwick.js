@@ -91,6 +91,26 @@ onload = function(){
         changeVol(value);
     });
 
+    //initialize state of mic disable button - just once on load
+    $.ajax({
+        type: 'GET',
+        dataType: 'json', 
+        url: '/override',
+        success: function(data){
+          //console.log(data);
+          if (data == "1"){
+            override = "1";
+            $('#override').text("Click to re-enable live mics");
+          }else{
+            $('#override').text("click to disable mics / listen to archives");
+          }
+        },
+
+         "error":function(error){
+         //handle error here
+        }
+      })
+
     $('#override').click(function(){
         toggle_live();
     });
