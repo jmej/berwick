@@ -25,6 +25,9 @@ html
             h2
                 |Currently Playing:
             div(id='currently_playing')
+            div(id='mic-override')
+                button(id='override', type="button", class='btn btn-danger', data-toggle='button', aria-pressed='false', autocomplete='off')
+                    |click to disable mics / listen to archives
             h2
                 |System Mute 
             button(id='mute', type="button", class='btn btn-danger', data-toggle='button', aria-pressed='false', autocomplete='off')

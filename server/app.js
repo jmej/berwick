@@ -105,9 +105,20 @@ app.post('/mute', auth, function(req, res){
     res.send('ok');
 });
 
+app.post('/override', auth, function(req, res){
+    console.log("Changing override to " + req.body);
+    client.send('/override', parseInt(req.body), function(){
+    });
+    state[req.params] = req.body;
+    saveState(state);
+    res.set('Conent-Type', 'text/plain');
+    res.send('ok');
+});
+
 app.listen(8080);
 console.log("Server listening on port 8080");
 
+//probably don't need the next two functions anymore but don't want to yank from production
 function loadPersistedValues(){
 	if(fs.existsSync(SAVESTATE)){
 		return JSON.parse(fs.readFileSync(SAVESTATE));

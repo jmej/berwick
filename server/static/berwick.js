@@ -2,6 +2,7 @@
 var timers = {};
 var muteState = {};
 var currentlyPlaying = {};
+var override = 0;
 
 function changeVol(value) {
     console.log("sending " + value + " to vol" );
@@ -12,6 +13,25 @@ function changeVol(value) {
         contentType: 'text/plain',
         data: value
     }).done(function(d){ console.log("RESPONSE: " + d);});
+}
+
+function toggle_live(){
+  if (override == "1"){
+      override = "0";
+      $('#override').text("click to disable mics / listen to archives");
+    }else{
+      override = "1";
+      $('#override').text("Click to re-enable live mics");
+  }
+
+  console.log("sending override "+ override);
+  $.ajax({
+      url: '/override',
+      method: 'POST',
+      dataType: 'text',
+      contentType: 'text/plain',
+      data: override
+  }).done(function(d){console.log("RESPONSE: " + d)});
 }
 
 function mute(button){
@@ -69,6 +89,10 @@ onload = function(){
         var value = slider.noUiSlider.get();
         console.log("value is "+value);
         changeVol(value);
+    });
+
+    $('#override').click(function(){
+        toggle_live();
     });
 
     $('#mute').click(function(){
