@@ -15,3 +15,12 @@ system startup script is start_pd.sh in this repo and is run from ???
 system shutdown is controlled by sudo crontab -e and shuts down at 1am each morning
 
 on prod machine, things are being run from ~/berwick/
+
+intel NUC needed a little modification to the image when getting moved to a new machine.
+https://arstechnica.com/gadgets/2014/02/linux-on-the-nuc-using-ubuntu-mint-fedora-and-the-steamos-beta/
+this allowed grub to boot:
+
+'$ sudo mount /dev/sda1 /mnt
+$ sudo mkdir /mnt/EFI/BOOT
+$ sudo cp /mnt/EFI/ubuntu/* /mnt/EFI/BOOT
+$ sudo mv /mnt/EFI/BOOT/grubx64.efi /mnt/EFI/BOOT/bootx64.efi'
