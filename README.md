@@ -23,4 +23,5 @@ doing this from a live ubuntu stick allowed grub to boot:
 ```$ sudo mount /dev/sda1 /mnt
 $ sudo mkdir /mnt/EFI/BOOT
 $ sudo cp /mnt/EFI/ubuntu/* /mnt/EFI/BOOT
-$ sudo mv /mnt/EFI/BOOT/grubx64.efi /mnt/EFI/BOOT/bootx64.efi```
+$ sudo mv /mnt/EFI/BOOT/grubx64.efi /mnt/EFI/BOOT/bootx64.efi
+```
