@@ -8,7 +8,7 @@ filesharing:
 
 pd does some loggging when microphone's are active - found in log.txt
 reboot logs can be looked at with last -x reboot
-synaccess manages system reboot behavior, settings are documented in /documentation in this repo
+synaccess manages system reboot behavior, settings are documented in /documentation in this repogit
 
 system startup script is start_pd.sh in this repo and is run from ???
 
