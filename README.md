@@ -18,9 +18,9 @@ on prod machine, things are being run from ~/berwick/
 
 intel NUC needed a little modification to the image when getting moved to a new machine.
 https://arstechnica.com/gadgets/2014/02/linux-on-the-nuc-using-ubuntu-mint-fedora-and-the-steamos-beta/
-this allowed grub to boot:
+doing this from a live ubuntu stick allowed grub to boot:
 
-'$ sudo mount /dev/sda1 /mnt
+```$ sudo mount /dev/sda1 /mnt
 $ sudo mkdir /mnt/EFI/BOOT
 $ sudo cp /mnt/EFI/ubuntu/* /mnt/EFI/BOOT
-$ sudo mv /mnt/EFI/BOOT/grubx64.efi /mnt/EFI/BOOT/bootx64.efi'
+$ sudo mv /mnt/EFI/BOOT/grubx64.efi /mnt/EFI/BOOT/bootx64.efi```
